@@ -1,5 +1,5 @@
 baseurl = "https://polyphene.github.io/fvm-rs-sdk-docs/"
-canonifyURLs = false
+canonifyURLs = true
 disableAliases = true
 disableHugoGeneratorInject = true
 enableEmoji = true
