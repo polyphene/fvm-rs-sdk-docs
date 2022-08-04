@@ -1,5 +1,8 @@
 # FVM Rust SDK Docs
 
+
+![Build status icon.](https://img.shields.io/github/workflow/status/polyphene/fvm-rs-sdk-docs/GitHub%20Pages.svg?style=flat-square)
+
 [![Project icon.](https://img.shields.io/badge/project-IPFS-blue.svg?style=flat-square)](http://ipfs.io/)
 
 This repository contains the documentation for the FVM Rust SDK. If you'd just like to read the Lotus docs, head to https://polyphene.github.io/fvm-rs-sdk-docs/.
