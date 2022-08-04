@@ -16,11 +16,13 @@ toc: true
 ## `fvm_state`
 
 To import in your actor everything needed by the procedural macro it is recommended to use the whole `state` module:
+
 ```rust
 use fvm_rs_sdk::state::*;
 ```
 
 There are two things to know while using this procedural macro:
+
 - The procedural macro does not work on structure with lifetime or generic parameters to prevent problems around Serialization
   and Deserialization.
 - When using the macro on a structure, fields that are not public will not be stored in the state.
@@ -28,6 +30,7 @@ There are two things to know while using this procedural macro:
 ## `fvm_actor`
 
 The procedural macro to annotate your actor's interface can be found in the `actor` module:
+
 ```rust
 use fvm_rs_sdk::actor::fvm_actor;
 ```
@@ -35,7 +38,8 @@ use fvm_rs_sdk::actor::fvm_actor;
 This macro will parse the annotated implementation and generate a proper `invoke()` function that will become the
 entry point of your actor.
 
-_Limitations_
+### Limitations
+
 - The implementation with `#[fvm_actor]` have to be the implementation of the structure with `#[fvm_state]`.
 - Only one implementation can be written with `#[fvm_actor]` as it will generate compilation conflicts otherwise (multiple
   `invoke()` functions declared).
@@ -46,11 +50,13 @@ _Limitations_
 
 The procedural macro to annotate your actor's entry point in the implementation representing your actor's interface. It
 can be accessed in the `actor` module:
+
 ```rust
 use fvm_rs_sdk::actor::fvm_export;
 ```
 
-_Limitations_
+### Limitations
+
 - When specifying an export it has to be used with the `binding` attribute to specify its internal dispatch value (e.g.: `#[fvm_export(binding=1)]`)
 - A method annotated with `#[fvm_export]` has to be public.
 - Methods with generic types or lifetimes as arguments or return are not supported.
