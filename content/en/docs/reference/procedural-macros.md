@@ -143,7 +143,7 @@ A simple usage would be:
 ```rust
 use fvm_rs_sdk::state::*;
 use fvm_rs_sdk::actor::{fvm_actor, fvm_export};
-use fvm_rs_sdk::payload::fvm_payload
+use fvm_rs_sdk::payload::fvm_payload;
 
 #[fvm_state]
 pub struct State {
