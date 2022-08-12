@@ -74,7 +74,7 @@ impl State {
 
 ### Limitations
 
-- The implementation with `#[fvm_actor]` have to be the implementation of the structure annotated
+- The implementation with `#[fvm_actor]` has to be the implementation of the structure annotated
 with `#[fvm_state]`.
 - Only one implementation can be annotated with `#[fvm_actor]` as it will otherwise generate
 compilation conflicts (multiple `invoke()` functions declared).
