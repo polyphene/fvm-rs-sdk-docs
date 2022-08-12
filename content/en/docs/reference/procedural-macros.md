@@ -22,7 +22,7 @@ To import in your actor everything needed by the procedural macro it is recommen
 use fvm_rs_sdk::state::*;
 ```
 
-The macro should be used on a public structure.  It will generate an implementation of the `StateObject`
+The macro should be used on a public structure. It will generate an implementation of the `StateObject`
 for the state object, allowing for it to be saved and load while interacting with the actor.
 
 A simple example of usage would be:
