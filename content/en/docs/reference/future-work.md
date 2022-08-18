@@ -13,7 +13,7 @@ weight: 400
 toc: true
 ---
 
-> If you have any ideas for iterations that you can not find in the list down below please feel free
+> If you have any idea for iterations that you can not find in the list down below please feel free
 > to open an issue on the [repository](https://github.com/polyphene/fvm-rs-sdk).
 
 ## _fvm_actor_
