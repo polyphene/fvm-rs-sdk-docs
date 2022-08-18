@@ -20,7 +20,7 @@ toc: true
 
 - Developers should be able to develop their own invoke function without using `#[fvm_actor]` and still
 feel as less overhead as possible. Different design should be studied (macros for code  generation of
-serde/dispatch/etc , code injection at dedicated places in the generated invoke ...) and one implemented.
+serde/dispatch/etc., code injection at dedicated places in the generated invoke ...) and one implemented.
 
 ## _fvm_export_
 
