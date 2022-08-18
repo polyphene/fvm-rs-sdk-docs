@@ -22,7 +22,7 @@ over the Filecoin network without having to think about overhead code used to co
 
 In that sense the SDK is meant to be:
 - **Simple**: Entry-level Rust developer should be able to use the SDK to produce actors that can be
-ran in the FVM.
+run in the FVM.
 - **Adjustable**: More experienced developer, either in Rust or on IPFS & Filecoin knowledge, should
 be able to fine-tune some part of the SDK to fit their needs (e.g.: codec for methods payloads).
 - **Modular**: For some use cases only a small amount of utilities will be required while other projects
