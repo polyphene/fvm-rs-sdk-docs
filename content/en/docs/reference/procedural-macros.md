@@ -7,9 +7,9 @@ lastmod: 2022-08-04T09:31:05+02:00
 draft: false
 images: []
 menu:
-  docs:
-    parent: "reference"
-weight: 200
+docs:
+parent: "reference"
+weight: 300
 toc: true
 ---
 
@@ -43,7 +43,6 @@ entry point of your actor.
 - The implementation with `#[fvm_actor]` have to be the implementation of the structure with `#[fvm_state]`.
 - Only one implementation can be written with `#[fvm_actor]` as it will generate compilation conflicts otherwise (multiple
   `invoke()` functions declared).
-- Currently, the only dispatch method handled is `method-num`.
 - Implementation with generics or lifetime are not supported.
 
 ## `fvm_export`
@@ -57,7 +56,22 @@ use fvm_rs_sdk::actor::fvm_export;
 
 ### Limitations
 
-- When specifying an export it has to be used with the `binding` attribute to specify its internal dispatch value (e.g.: `#[fvm_export(binding=1)]`)
+- When specifying an export it has to be used with a valid binding method attribute to specify its internal dispatch value (e.g.: `#[fvm_export(method_num=1)]`).
+  Currently the only supported binding method is `method_num`.
 - A method annotated with `#[fvm_export]` has to be public.
 - Methods with generic types or lifetimes as arguments or return are not supported.
 - Only a "few" types are supported. The list can be found [here](https://github.com/polyphene/fvm-rs-sdk-private/blob/feature/invoke-glue-code/macro-support/src/export/convert.rs#L158-L285).
+
+## `fvm_payload`
+
+`#[fvm_payload]` is used to annotate custom structures that will be used either as parameters or return
+value for exposed methods. To use the macro it is advised to import the whole `payload` module:
+
+```rust
+use fvm_rs_sdk::payload::*;
+```
+
+There are two things to know while using this procedural macro:
+
+- The procedural macro does not work on structure with lifetime or generic parameters to prevent problems around Serialization
+  and Deserialization.
